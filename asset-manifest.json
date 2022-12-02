@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/test7winds/static/css/main.123a4994.css",
+    "main.js": "/test7winds/static/js/main.10e660c7.js",
+    "static/js/787.0f2a7cb9.chunk.js": "/test7winds/static/js/787.0f2a7cb9.chunk.js",
+    "index.html": "/test7winds/index.html",
+    "main.123a4994.css.map": "/test7winds/static/css/main.123a4994.css.map",
+    "main.10e660c7.js.map": "/test7winds/static/js/main.10e660c7.js.map",
+    "787.0f2a7cb9.chunk.js.map": "/test7winds/static/js/787.0f2a7cb9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.123a4994.css",
+    "static/js/main.10e660c7.js"
+  ]
+}
