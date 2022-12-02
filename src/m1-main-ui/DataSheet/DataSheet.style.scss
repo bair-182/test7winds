@@ -1,0 +1,41 @@
+.sheetContainer {
+  display: flex;
+  flex-direction: row;
+
+  color: greenyellow;
+  background-color: rgb(32,33,36);
+  border: 1px solid;
+  height: 750px;
+  width: auto;
+  p {
+    margin: 2px;
+  }
+}
+
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-start;
+  max-width: 200px;
+  padding: 2px;
+  p {
+    font-size: 16px;
+    width: 170px;
+  }
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  width: 200vh;
+  border: darkolivegreen 1px solid;
+}
+
+.spinner {
+  z-index: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}

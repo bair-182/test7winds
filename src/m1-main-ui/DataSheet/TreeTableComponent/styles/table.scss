@@ -1,0 +1,182 @@
+.demo-tree-table {
+  font-size: 14px;
+  color: #dddddd;
+  background: #27272A;
+  border: 1px solid rgba(55, 53, 47, 0.2);
+}
+
+/* Header */
+.demo-tree-table .cp_tree-table_header {
+  color: #8E8E96;
+  background: #27272A;
+  border-bottom: 2px solid rgba(55, 58, 62, 0.98);
+}
+
+
+
+/* Cells */
+.demo-tree-table .cp_tree-table_cell,
+.demo-tree-table .cp_tree-table_header-cell {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid rgba(50, 52, 56, 0.98);
+  &:hover {
+    background: rgba(61, 65, 68, 0.98);
+  }
+}
+
+.demo-tree-table .cp_tree-table_header-cell > span {
+  width: 100%;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+}
+
+.demo-tree-table .cp_tree-table_header-cell > span.align-right {
+  text-align: right;
+  &::selection {
+    background: #ADFF2F;
+    color: #27272A;
+  }
+}
+
+.demo-tree-table .cp_tree-table_header-cell:first-child > span {
+  padding-left: 10px;
+
+}
+
+
+/* Editable cell */
+.demo-tree-table .cp_tree-table_cell > input {
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding: 5px 8px;
+  box-sizing: border-box;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  background: #27272A;
+  color: #dddddd;
+  box-shadow: inset 0 0 0 1px #8E8E96;
+}
+
+.demo-tree-table .cp_tree-table_cell > input:hover {
+  box-shadow: inset 0 0 0 1px #8E8E96;
+}
+
+.demo-tree-table .cp_tree-table_cell > input:focus {
+  /*background: #edf6fc;*/
+  box-shadow: inset 0 0 0 1px #ADFF2F;
+}
+.demo-tree-table .cp_tree-table_cell > ::selection {
+  background: #ADFF2F;
+  color: #27272A;
+}
+
+/* Index cell  */
+.demo-tree-table .cp_tree-table_cell .toggle-button {
+  appearance: auto;
+  position: relative;
+  font-size: 14px;
+  color: #040402;
+  border: none;
+  padding: 4px 0 4px 15px;
+  background-color: transparent;
+}
+
+.demo-tree-table .cp_tree-table_cell .toggle-button:not(:disabled) {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo-tree-table .cp_tree-table_cell .toggle-button:not(:disabled)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  
+
+  border-width: 5px 0 5px 5px;
+  border-color: transparent transparent transparent #040402;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.demo-tree-table .cp_tree-table_cell .toggle-button.expanded:not(:disabled)::after {
+  border-width: 5px 5px 0 5px;
+  border-color: #040402 transparent transparent transparent;
+}
+
+.demo-tree-table .cp_tree-table_cell span.is-waldo {
+  font-weight: 600;
+  color: #0f55eb;
+  &::selection {
+    background: #ADFF2F;
+    color: #27272A;
+  }
+}
+
+/* Employees cell */
+.demo-tree-table .cp_tree-table_cell > .employees-cell {
+  width: 100%;
+  text-align: right;
+  &::selection {
+    background: #ADFF2F;
+    color: #27272A;
+  }
+}
+
+/* Expenses cell */
+.demo-tree-table .cp_tree-table_cell > .expenses-cell {
+  font-family: 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', Menlo, Courier, monospace;
+  font-weight: 400;
+  width: 100%;
+  text-align: right;
+  padding-right: 10px;
+
+  &::selection {
+    background: #ADFF2F;
+    color: #27272A;
+  }
+}
+
+.levelColumn {
+  background: #38383b;
+  border-radius: 5px;
+  padding: 3px;
+
+  display: inline-block;
+  align-items: baseline;
+
+  cursor: pointer;
+  .hiddenBox {
+    visibility: hidden;
+    display: none;
+
+  }
+  &:hover {
+    .hiddenBox {
+      visibility: visible;
+      display: inline-block;
+    }
+  }
+}
+
+.emptyIcon {
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}

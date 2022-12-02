@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #fff292;
+}
+
+a,
+a:focus,
+a:hover,
+a:active {
+  color: #000;
+  outline: none;
+  text-decoration: none;
+}
+
+button,
+button:focus,
+button:hover,
+button:active {
+  outline: none;
+}
+
+
+
