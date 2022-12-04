@@ -2,7 +2,6 @@ import React, {
     KeyboardEvent,
     Fragment,
     useState,
-    useRef,
     useEffect,
     ChangeEvent,
     useCallback,
@@ -14,10 +13,10 @@ import {
     FileTextFilled,
     FolderFilled,
 } from "@ant-design/icons";
-import {Popconfirm, Space, Spin, Tooltip} from "antd";
+import {Popconfirm, Tooltip} from "antd";
 import {useSelector} from "react-redux";
 import {RootStateType, useAppDispatch} from "../../../../m2-main-bll/store";
-import {EntityType, ForLibraryTreeRowsType, TreeOneRowType} from "../../../../m3-API/DataSheetAPI";
+import { ForLibraryTreeRowsType, TreeOneRowType} from "../../../../m3-API/DataSheetAPI";
 import {
     createRowThunk,
     deleteRowThunk, getTreeRowsAC,
@@ -168,11 +167,13 @@ export const TreeGridComponent = React.memo ( function (props:PropsType) {
     },[RawTreeRowRdxState.length, deleteRowHandler, editRowMode, isLoading, onClickRootFolderHandler, onClickSecondFolderHandler, props.treeStateRdx.length])
 
     const onChangeToUpdateRowHandler = (row: Row<ForLibraryTreeRowsType>, event: ChangeEvent<HTMLInputElement>, value: ColumnNameType ) => {
+        if( !isNaN(Number(event.currentTarget.value))) {
+            value === "salary" && row.updateData({...row.data, salary: Number(event.target.value)});
+            value === "equipmentCosts" && row.updateData({...row.data, equipmentCosts: Number(event.target.value)});
+            value === "overheads" && row.updateData({...row.data, overheads: Number(event.target.value)});
+            value === "estimatedProfit" && row.updateData({...row.data, estimatedProfit: Number(event.target.value)});
+        }
         value === "rowName" && row.updateData({...row.data, rowName: event.target.value});
-        value === "salary" && row.updateData({...row.data, salary: Number(event.target.value)});
-        value === "equipmentCosts" && row.updateData({...row.data, equipmentCosts: Number(event.target.value)});
-        value === "overheads" && row.updateData({...row.data, overheads: Number(event.target.value)});
-        value === "estimatedProfit" && row.updateData({...row.data, estimatedProfit: Number(event.target.value)});
     }
 
     const onKeyPressHandler = ( row: Row<ForLibraryTreeRowsType>, event: KeyboardEvent<HTMLInputElement>) => {
@@ -246,6 +247,7 @@ export const TreeGridComponent = React.memo ( function (props:PropsType) {
                          autoFocus={onDoubleClickedColumn === "salary"}
                          onKeyDown={(event) => onKeyPressHandler(row, event)}
                          onChange={(event) => onChangeToUpdateRowHandler(row,event, "salary")}
+
                 />
                 : <span className="employees-cell" onDoubleClick={() => editModeOn(row, "salary")}>{row.data.salary}</span>
         );

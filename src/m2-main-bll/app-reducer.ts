@@ -1,5 +1,5 @@
 import {DataSheetAPI, EntityType} from "../m3-API/DataSheetAPI";
-import {DataSheetActionType, getTreeRowsAC, RawTreeRowStateFromAPIAC, refreshRowsThunk} from "./data-sheet-reducer";
+import {DataSheetActionType, getTreeRowsAC, RawTreeRowStateFromAPIAC} from "./data-sheet-reducer";
 import {AppThunkType, RootStateType} from "./store";
 
 const initStateApp = {
@@ -52,7 +52,7 @@ export const initializeAppThunk = () => (dispatch: AppThunkType, getState: () =>
     const eIDFromLocStorage = Number(localStorage.getItem('entityID'))
     const eIDFrom_Redux = getState().app.eID
     DataSheetAPI.getTreeRows(eIDFromLocStorage)
-        .then((res) => {
+        .then(() => {
             if (eIDFromLocStorage !== 0 || eIDFrom_Redux.id !== eIDFromLocStorage) {
                 dispatch(setEntityFromAPI_AC({rowName: rowNameFromLocStorage, id: eIDFromLocStorage}))
             }
