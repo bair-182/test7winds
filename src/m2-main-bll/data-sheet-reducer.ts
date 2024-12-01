@@ -111,7 +111,6 @@ export const refreshRowsThunk = () => (dispatch: AppThunkType) => {
                 } else {
                     dispatch(getTreeRowsAC(res.data))
                 }
-
                 dispatch(RawTreeRowStateFromAPIAC(res.data))
             }
         })

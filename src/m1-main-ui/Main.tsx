@@ -34,7 +34,7 @@ const Main: React.FC = () => {
             {(!isLoading && entityID.id === 0) && <Result
                 style={{color: "white"}}
                 extra={<div>
-                    <h2>Для работы с бэкендом нужно получить EntityID</h2>
+                    <h2>Для работы с API нужно получить EntityID</h2>
                     <Button type="primary" key="console"
                     onClick={createEntityClickHandler}
                     >
